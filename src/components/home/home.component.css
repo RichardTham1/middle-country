@@ -1,0 +1,8 @@
+h1 {text-align: center;}
+
+.countries {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
