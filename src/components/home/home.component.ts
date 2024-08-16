@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CountryVerificationService } from '../../services/country-verification/country-verification.service';
 import { CountryPair } from '../../interfaces/country-pair';
 
@@ -9,9 +9,14 @@ import { CountryPair } from '../../interfaces/country-pair';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   twoCountries: CountryPair | null = null;
   constructor(public countryVerificationService: CountryVerificationService) {}
+
+  ngOnInit(): void {
+    this.countryVerificationService.getTwoCountries();
+  }
+  
 
   getTwoCountries(): void {
     this.twoCountries = this.countryVerificationService.getTwoCountries();
