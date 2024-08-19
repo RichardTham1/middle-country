@@ -6,12 +6,13 @@ import { CSVRow } from '../../interfaces/CSVRow';
 import * as Papa from 'papaparse';
 import * as turf from '@turf/turf';
 import { LongLat } from '../../interfaces/longitude-latitude';
+import { Polygon } from 'leaflet';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CountryVerificationService {
-  private geojsonData: FeatureCollection | null = null;
+  private geojsonData!: FeatureCollection;
   private initialized: Promise<void>;
   private countryLongLatData: Map<string, LongLat> = new Map(); 
   allCountries: string[] = [];
@@ -34,6 +35,7 @@ export class CountryVerificationService {
     .then(response => response.json())
     .then((data: FeatureCollection) => {
       this.geojsonData = data;
+      console.log(this.geojsonData);
     }).finally(() => {
       this.loadCountries();
     })
@@ -66,9 +68,6 @@ export class CountryVerificationService {
     const point: Point = {
       type: 'Point',
       coordinates: [country.longitude, country.latitude]
-    }
-    for (const feature in this.geojsonData?.features) {
-      
     }
     return true;
   }
