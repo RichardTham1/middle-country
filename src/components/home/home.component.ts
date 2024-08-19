@@ -14,9 +14,10 @@ export class HomeComponent implements OnInit {
   constructor(public countryVerificationService: CountryVerificationService) {}
 
   ngOnInit(): void {
-    this.countryVerificationService.getTwoCountries();
+    this.countryVerificationService.onInitialized().then(() => {
+      this.getTwoCountries();
+    });
   }
-  
 
   getTwoCountries(): void {
     this.twoCountries = this.countryVerificationService.getTwoCountries();
