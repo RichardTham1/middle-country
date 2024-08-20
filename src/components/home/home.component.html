@@ -15,20 +15,19 @@
 </div>
 
 <div class="answer">
-    <form class="example-form">
-        <label for="countryName">Name a country</label>
-        <input [(ngModel)]="answer"
-               type="text"
-               placeholder="Country"
-               [formControl]="control"
-               [matAutocomplete]="auto"
-               class="example-input">
-        <mat-autocomplete #auto="matAutocomplete">
-          @for (street of filteredStreets | async; track street) {
-            <mat-option [value]="street">{{street}}</mat-option>
-          }
-        </mat-autocomplete>
-      </form>
+    <label for="countryName">Name a country</label>
+    <input [(ngModel)]="answer"
+            list="options"
+            type="text"
+            placeholder="Country"
+            autocomplete="off"
+            (ngModelChange)="updatelist($event)"
+            class="example-input">
+    <datalist id="options">
+        @for (country of this.filteredCountry; track $index) {
+            <option value={{country}}></option>
+        }
+    </datalist>
 </div>
 
 
