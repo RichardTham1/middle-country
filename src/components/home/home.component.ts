@@ -41,8 +41,8 @@ export class HomeComponent implements OnInit {
   }
 
   verifyAnswer() {
-    console.log(this.answer);
-    this.countryVerificationService.verifyCountry(this.answer, this.twoCountries!);
+    console.log(this.countryVerificationService.verifyCountry(this.answer, this.twoCountries!));
+    this.filteredCountry = [];
   }
 
   @HostListener('keydown', ['$event'])
