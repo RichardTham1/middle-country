@@ -46,6 +46,7 @@ export class CountryVerificationService {
     this.geojsonData?.features.forEach((feature: Feature) => {
       this.allCountries.push(feature.properties!['name']);
     })
+    this.allCountries.push('Body of Water');
     console.log(this.allCountries);
   }
 
@@ -84,6 +85,7 @@ export class CountryVerificationService {
         }
       }
     }
+    if (expectedAnswer === '') expectedAnswer = 'Body of Water';
     console.log(expectedAnswer);
     return answer == expectedAnswer;
   }
