@@ -1,17 +1,30 @@
-<h1>Middle Country</h1>
+<!-- <h1>Middle Country</h1> -->
+<h1> What's in between?</h1>
 
 <div>
-    <div className="countries">
-        <p className="countryName">  
-            {{this.twoCountries?.firstCountry}}
-        </p>
-        <p className="countryName"> 
-            {{this.twoCountries?.secondCountry}}
-        </p>
+    <div class="split left">
+        <div class="countryName">  
+            <p>{{this.twoCountries?.firstCountry}}</p>
+        </div>
     </div>
+    <div class="split right">
+        <div class="countryName">  
+            <p>{{this.twoCountries?.secondCountry}}</p>
+        </div>
+    </div>
+</div>
+
+<div class="answer">
+    <form id="myForm" action="/submit" method="post" autocomplete="off">
+        <label for="countryName">Name a country</label>
+        <input type="text" id="countryName" name="countryName" placeholder="Country" autocomplete="country" required>
+        <input type="submit" style="display:none"> <!-- Hidden submit button -->
+    </form>
 </div>
 
 
 
-<label for="countryName">Which country is halfway between:</label>
-<input type="text" id="countryName" name="countryName"/>
+
+
+
+
