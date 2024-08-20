@@ -15,11 +15,22 @@
 </div>
 
 <div class="answer">
-    <form>
+    <form class="example-form">
         <label for="countryName">Name a country</label>
-        <input [(ngModel)]="answer" type="text" id="countryName" name="answer" placeholder="Country" autocomplete="country" required>
-    </form>
+        <input [(ngModel)]="answer"
+               type="text"
+               placeholder="Country"
+               [formControl]="control"
+               [matAutocomplete]="auto"
+               class="example-input">
+        <mat-autocomplete #auto="matAutocomplete">
+          @for (street of filteredStreets | async; track street) {
+            <mat-option [value]="street">{{street}}</mat-option>
+          }
+        </mat-autocomplete>
+      </form>
 </div>
+
 
 
 
