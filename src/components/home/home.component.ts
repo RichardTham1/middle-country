@@ -34,6 +34,9 @@ export class HomeComponent implements OnInit {
   @HostListener('keydown', ['$event'])
   keyHandler(event: KeyboardEvent) {
     const key = event.key.normalize('NFD').replace(/\p{Diacritic}/gu, '');
-    if (key === 'Enter') this.verifyAnswer();
+    if (key === 'Enter') {
+      this.verifyAnswer();
+      this.answer = '';
+    }
   }
 }
