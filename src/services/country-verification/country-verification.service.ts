@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FeatureCollection, Feature, Point } from 'geojson';
+import { FeatureCollection, Feature, Point, Geometry } from 'geojson';
 import { environment } from '../../env/environment';
 import { CountryPair } from '../../interfaces/country-pair';
 import { CSVRow } from '../../interfaces/CSVRow';
@@ -62,14 +62,30 @@ export class CountryVerificationService {
     return {firstCountry: this.allCountries[firstCountryIdx], secondCountry: this.allCountries[secondCountryIdx]};
   }
 
-  verifyCountry(answer: string): boolean {
-    const country: LongLat | undefined = this.countryLongLatData.get(answer);
-    if (country === undefined) return false;
-    const point: Point = {
+  verifyCountry(answer: string, countries: CountryPair): boolean {
+    let expectedAnswer: string = '';
+
+    // Besoin de calculer la distance entre deux longitudes latitude pour ensuite
+    const firstCountryLongLat: LongLat | undefined = this.countryLongLatData.get(countries.firstCountry);
+    const secondCountryLongLat: LongLat | undefined = this.countryLongLatData.get(countries.secondCountry);
+    const middleLong: number = (firstCountryLongLat!.longitude + secondCountryLongLat!.longitude) / 2;
+    const middleLat: number = (firstCountryLongLat!.latitude + secondCountryLongLat!.latitude) / 2;
+    const midPoint: Point = {
       type: 'Point',
-      coordinates: [country.longitude, country.latitude]
+      coordinates: [middleLong, middleLat]
+    };
+    for (const feature of this.geojsonData.features) {
+      if (feature.geometry.type === 'Polygon' || feature.geometry.type === 'MultiPolygon') {
+        const polygon = feature.geometry;
+        const isInside = turf.booleanPointInPolygon(midPoint, polygon);
+        if (isInside) {
+          expectedAnswer = feature.properties!['name'];
+          break;
+        }
+      }
     }
-    return true;
+    console.log(expectedAnswer);
+    return answer == expectedAnswer;
   }
 
   private loadLongLat(): void {
