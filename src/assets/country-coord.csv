@@ -24,12 +24,11 @@ Belize,BZ,BLZ,84,17.25,-88.75
 Benin,BJ,BEN,204,9.5,2.25
 Bermuda,BM,BMU,60,32.3333,-64.75
 Bhutan,BT,BTN,64,27.5,90.5
-"Bolivia, Plurinational State of",BO,BOL,68,-17.0,-65.0
+Bolivia,BO,BOL,68,-17.0,-65.0
 Bosnia and Herzegovina,BA,BIH,70,44.0,18.0
 Botswana,BW,BWA,72,-22.0,24.0
 Bouvet Island,BV,BVT,74,-54.4333,3.4
 Brazil,BR,BRA,76,-10.0,-55.0
-British Indian Ocean Territory,IO,IOT,86,-6.0,71.5
 Brunei Darussalam,BN,BRN,96,4.5,114.6667
 Bulgaria,BG,BGR,100,43.0,25.0
 Burkina Faso,BF,BFA,854,13.0,-2.0
@@ -47,8 +46,8 @@ Christmas Island,CX,CXR,162,-10.5,105.6667
 Cocos (Keeling) Islands,CC,CCK,166,-12.5,96.8333
 Colombia,CO,COL,170,4.0,-72.0
 Comoros,KM,COM,174,-12.1667,44.25
-Congo,CG,COG,178,-1.0,15.0
-"Congo, the Democratic Republic of the",CD,COD,180,0.0,25.0
+Republic of the Congo,CG,COG,178,-1.0,15.0
+Democratic Republic of the Congo,CD,COD,180,0.0,25.0
 Cook Islands,CK,COK,184,-21.2333,-159.7667
 Costa Rica,CR,CRI,188,10.0,-84.0
 Côte d'Ivoire,CI,CIV,384,8.0,-5.0
@@ -100,7 +99,7 @@ Hungary,HU,HUN,348,47.0,20.0
 Iceland,IS,ISL,352,65.0,-18.0
 India,IN,IND,356,20.0,77.0
 Indonesia,ID,IDN,360,-5.0,120.0
-"Iran, Islamic Republic of",IR,IRN,364,32.0,53.0
+Iran,IR,IRN,364,32.0,53.0
 Iraq,IQ,IRQ,368,33.0,44.0
 Ireland,IE,IRL,372,53.0,-8.0
 Isle of Man,IM,IMN,833,54.23,-4.55
@@ -113,21 +112,21 @@ Jordan,JO,JOR,400,31.0,36.0
 Kazakhstan,KZ,KAZ,398,48.0,68.0
 Kenya,KE,KEN,404,1.0,38.0
 Kiribati,KI,KIR,296,1.4167,173.0
-"Korea, Democratic People's Republic of",KP,PRK,408,40.0,127.0
-"Korea, Republic of",KR,KOR,410,37.0,127.5
+North Korea,KP,PRK,408,40.0,127.0
+South Korea,KR,KOR,410,37.0,127.5
 Kuwait,KW,KWT,414,29.3375,47.6581
 Kyrgyzstan,KG,KGZ,417,41.0,75.0
-Lao People's Democratic Republic,LA,LAO,418,18.0,105.0
+Laos,LA,LAO,418,18.0,105.0
 Latvia,LV,LVA,428,57.0,25.0
 Lebanon,LB,LBN,422,33.8333,35.8333
 Lesotho,LS,LSO,426,-29.5,28.5
 Liberia,LR,LBR,430,6.5,-9.5
-Libyan Arab Jamahiriya,LY,LBY,434,25.0,17.0
+Libya,LY,LBY,434,25.0,17.0
 Liechtenstein,LI,LIE,438,47.1667,9.5333
 Lithuania,LT,LTU,440,56.0,24.0
 Luxembourg,LU,LUX,442,49.75,6.1667
 Macao,MO,MAC,446,22.1667,113.55
-"Macedonia, the former Yugoslav Republic of",MK,MKD,807,41.8333,22.0
+Macedonia,MK,MKD,807,41.8333,22.0
 Madagascar,MG,MDG,450,-20.0,47.0
 Malawi,MW,MWI,454,-13.5,34.0
 Malaysia,MY,MYS,458,2.5,112.5
@@ -140,8 +139,7 @@ Mauritania,MR,MRT,478,20.0,-12.0
 Mauritius,MU,MUS,480,-20.2833,57.55
 Mayotte,YT,MYT,175,-12.8333,45.1667
 Mexico,MX,MEX,484,23.0,-102.0
-"Micronesia, Federated States of",FM,FSM,583,6.9167,158.25
-"Moldova, Republic of",MD,MDA,498,47.0,29.0
+Moldova,MD,MDA,498,47.0,29.0
 Monaco,MC,MCO,492,43.7333,7.4
 Mongolia,MN,MNG,496,46.0,105.0
 Montenegro,ME,MNE,499,42.0,19.0
@@ -166,7 +164,7 @@ Norway,NO,NOR,578,62.0,10.0
 Oman,OM,OMN,512,21.0,57.0
 Pakistan,PK,PAK,586,30.0,70.0
 Palau,PW,PLW,585,7.5,134.5
-"Palestinian Territory, Occupied",PS,PSE,275,32.0,35.25
+Palestine,PS,PSE,275,32.0,35.25
 Panama,PA,PAN,591,9.0,-80.0
 Papua New Guinea,PG,PNG,598,-6.0,147.0
 Paraguay,PY,PRY,600,-23.0,-58.0
@@ -179,9 +177,8 @@ Puerto Rico,PR,PRI,630,18.25,-66.5
 Qatar,QA,QAT,634,25.5,51.25
 Réunion,RE,REU,638,-21.1,55.6
 Romania,RO,ROU,642,46.0,25.0
-Russian Federation,RU,RUS,643,60.0,100.0
+Russia,RU,RUS,643,60.0,100.0
 Rwanda,RW,RWA,646,-2.0,30.0
-"Saint Helena, Ascension and Tristan da Cunha",SH,SHN,654,-15.9333,-5.7
 Saint Kitts and Nevis,KN,KNA,659,17.3333,-62.75
 Saint Lucia,LC,LCA,662,13.8833,-61.1333
 Saint Pierre and Miquelon,PM,SPM,666,46.8333,-56.3333
@@ -211,9 +208,9 @@ Swaziland,SZ,SWZ,748,-26.5,31.5
 Sweden,SE,SWE,752,62.0,15.0
 Switzerland,CH,CHE,756,47.0,8.0
 Syrian Arab Republic,SY,SYR,760,35.0,38.0
-"Taiwan, Province of China",TW,TWN,158,23.5,121.0
+Taiwan,TW,TWN,158,23.5,121.0
 Tajikistan,TJ,TJK,762,39.0,71.0
-"Tanzania, United Republic of",TZ,TZA,834,-6.0,35.0
+United Republic of Tanzania,TZ,TZA,834,-6.0,35.0
 Thailand,TH,THA,764,15.0,100.0
 Timor-Leste,TL,TLS,626,-8.55,125.5167
 Togo,TG,TGO,768,8.0,1.1667
@@ -234,10 +231,8 @@ United States Minor Outlying Islands,UM,UMI,581,19.2833,166.6
 Uruguay,UY,URY,858,-33.0,-56.0
 Uzbekistan,UZ,UZB,860,41.0,64.0
 Vanuatu,VU,VUT,548,-16.0,167.0
-"Venezuela, Bolivarian Republic of",VE,VEN,862,8.0,-66.0
+Venezuela,VE,VEN,862,8.0,-66.0
 Viet Nam,VN,VNM,704,16.0,106.0
-"Virgin Islands, British",VG,VGB,92,18.5,-64.5
-"Virgin Islands, U.S.",VI,VIR,850,18.3333,-64.8333
 Wallis and Futuna,WF,WLF,876,-13.3,-176.2
 Western Sahara,EH,ESH,732,24.5,-13.0
 Yemen,YE,YEM,887,15.0,48.0
