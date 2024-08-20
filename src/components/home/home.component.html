@@ -15,10 +15,9 @@
 </div>
 
 <div class="answer">
-    <form id="myForm" action="/submit" method="post" autocomplete="off">
+    <form>
         <label for="countryName">Name a country</label>
-        <input type="text" id="countryName" name="countryName" placeholder="Country" autocomplete="country" required>
-        <input type="submit" style="display:none"> <!-- Hidden submit button -->
+        <input [(ngModel)]="answer" type="text" id="countryName" name="answer" placeholder="Country" autocomplete="country" required>
     </form>
 </div>
 
