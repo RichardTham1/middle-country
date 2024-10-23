@@ -1,12 +1,14 @@
 <div class="counter-container">
-    <div class="counter">
-        <p>Right</p>
+    <div class="counter-right">
+        <p class="counter-title">Right</p>
+        <p class="counter">{{this.rightCounter}}</p>
     </div>
     <div class="separator"></div>
-    <div class="counter">
-        <p>Wrong</p>
+    <div class="counter-wrong">
+        <p class="counter-title">Wrong</p>
+        <p class="counter">{{this.wrongCounter}}</p>
     </div>
 </div>
 <div class="reset">
-    <button>Reset</button>
+    <button (click)="this.reset()">Reset</button>
 </div>
