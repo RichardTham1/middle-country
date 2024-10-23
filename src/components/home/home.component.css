@@ -1,47 +1,44 @@
 h1 {
-    position: absolute;
+    position: fixed;
     top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1000; /* Ensure it's above other elements */
+    z-index: 1000;
     text-align: center;
-    font-family: sans-serif; /* Change the font */
+    font-family: sans-serif;
     color: white;
 }
 
 .split {
     height: 100%;
     width: 50%;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     top: 0;
     overflow-x: hidden;
     padding-top: 20px;
-} 
-  /* Control the left side */
-.left {
-    left: 0;
-    background-image: 
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Dark overlay */
-        url('src\assets\test1.jpg'); /* Path to the image */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* background-color: #111; */
-}
-/* Control the right side */
-.right {
-    right: 0;
-    background-image: 
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Dark overlay */
-        url('src\assets\test2.jpg'); /* Path to the image */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* background-color: red; */
 }
 
-/* If you want the content centered horizontally and vertically */
+.left {
+    left: 0;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('src\assets\test1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.right {
+    right: 0;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('src\assets\test2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .countryName {
     position: absolute;
     top: 50%;
@@ -53,41 +50,41 @@ h1 {
 }
 
 label {
-    display: block; /* Makes the label a block element, which allows it to be on a new line */
-    margin-bottom: 5px; /* Space between the label and input field */
-    font-weight: bold; /* Make the label text bold */
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 input {
-    width: 100%; /* Full width of the parent container */
+    width: 100%;
     padding: 10px;
     font-size: 16px;
-    box-sizing: border-box; /* Includes padding and border in the element’s total width and height */
+    box-sizing: border-box;
 }
 
 .answer {
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000; /* Ensure it's above other elements */
-  text-align: center;
-  font-family: sans-serif; /* Change the font */
-  color: white;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    text-align: center;
+    font-family: sans-serif;
+    color: white;
 }
 
 .example-form {
     min-width: 150px;
     max-width: 500px;
     width: 100%;
-  }
-  
-  .example-full-width {
+}
+
+.example-full-width {
     width: 100%;
-  }
-  
-  .example-input {
+}
+
+.example-input {
     max-width: 100%;
     width: 300px;
-    z-index: 1000; /* Ensure it's above other elements */
-  }
+    z-index: 1000;
+}
