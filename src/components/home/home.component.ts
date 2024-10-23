@@ -1,21 +1,23 @@
-import { Component, HostListener, Input, NgModule, OnInit } from '@angular/core';
+import { Component, HostListener, Input, NgModule, OnInit, ViewChild } from '@angular/core';
 import { CountryVerificationService } from '../../services/country-verification/country-verification.service';
 import { CountryPair } from '../../interfaces/country-pair';
 import { FormsModule } from '@angular/forms';
+import { CounterComponent } from "../counter/counter.component";
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CounterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
+  @ViewChild(CounterComponent) counterComponent!: CounterComponent;
   filteredCountry: string[] = [];
   answer: string = '';
   twoCountries: CountryPair | null = null;
-  constructor(public countryVerificationService: CountryVerificationService) {}
+  constructor(public countryVerificationService: CountryVerificationService) { }
 
   ngOnInit(): void {
     this.countryVerificationService.onInitialized().then(() => {
@@ -41,7 +43,13 @@ export class HomeComponent implements OnInit {
   }
 
   verifyAnswer() {
-    console.log(this.countryVerificationService.verifyCountry(this.answer, this.twoCountries!));
+    const res: boolean = this.countryVerificationService.verifyCountry(this.answer, this.twoCountries!);
+    if (res) {
+      this.counterComponent.incrementRight();
+      this.getTwoCountries();
+    } else {
+      this.counterComponent.incrementWrong();
+    }
     this.filteredCountry = [];
   }
 
