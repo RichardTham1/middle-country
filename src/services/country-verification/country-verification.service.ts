@@ -14,7 +14,7 @@ import { Polygon } from 'leaflet';
 export class CountryVerificationService {
   private geojsonData!: FeatureCollection;
   private initialized: Promise<void>;
-  private countryLongLatData: Map<string, LongLat> = new Map(); 
+  private countryLongLatData: Map<string, LongLat> = new Map();
   allCountries: string[] = [];
   constructor() {
     this.initialized = this.initializeService();
@@ -32,14 +32,14 @@ export class CountryVerificationService {
 
   private async loadGeojson(): Promise<void> {
     return fetch(`assets/countries.geojson`)
-    .then(response => response.json())
-    .then((data: FeatureCollection) => {
-      this.geojsonData = data;
-      console.log(this.geojsonData);
-    }).finally(() => {
-      this.loadCountries();
-    })
-    .catch(err => console.error('Failed to load GeoJSON', err));
+      .then(response => response.json())
+      .then((data: FeatureCollection) => {
+        this.geojsonData = data;
+        console.log(this.geojsonData);
+      }).finally(() => {
+        this.loadCountries();
+      })
+      .catch(err => console.error('Failed to load GeoJSON', err));
   }
 
   loadCountries(): void {
@@ -60,7 +60,7 @@ export class CountryVerificationService {
     while (secondCountryIdx == firstCountryIdx) {
       secondCountryIdx = this.getRandomNumber();
     }
-    return {firstCountry: this.allCountries[firstCountryIdx], secondCountry: this.allCountries[secondCountryIdx]};
+    return { firstCountry: this.allCountries[firstCountryIdx], secondCountry: this.allCountries[secondCountryIdx] };
   }
 
   verifyCountry(answer: string, countries: CountryPair): boolean {
@@ -86,30 +86,29 @@ export class CountryVerificationService {
       }
     }
     if (expectedAnswer === '') expectedAnswer = 'Body of Water';
-    console.log(expectedAnswer);
     return answer == expectedAnswer;
   }
 
   private loadLongLat(): void {
     fetch('assets/country-coord.csv')
-    .then(response => response.text())
-    .then(csvData => {
-      Papa.parse<CSVRow>(csvData, {
-        header: true,
-        skipEmptyLines: true,
-        complete: (results: { data: CSVRow[]; }) => {
-          results.data.forEach((row: any) => {
-            const country = row['Country'];
-            const longitude = Number(row['Longitude (average)']);
-            const latitude = Number(row['Latitude (average)']);
-            this.countryLongLatData.set(country, { longitude, latitude });
-          });
-        },
-        error: (error: Error) => {
-          console.error('Error parsing CSV:', error);
-        }
-      });
-    })
-    .catch(error => console.error('Error fetching CSV file:', error));
+      .then(response => response.text())
+      .then(csvData => {
+        Papa.parse<CSVRow>(csvData, {
+          header: true,
+          skipEmptyLines: true,
+          complete: (results: { data: CSVRow[]; }) => {
+            results.data.forEach((row: any) => {
+              const country = row['Country'];
+              const longitude = Number(row['Longitude (average)']);
+              const latitude = Number(row['Latitude (average)']);
+              this.countryLongLatData.set(country, { longitude, latitude });
+            });
+          },
+          error: (error: Error) => {
+            console.error('Error parsing CSV:', error);
+          }
+        });
+      })
+      .catch(error => console.error('Error fetching CSV file:', error));
   }
 }
