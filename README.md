@@ -6,6 +6,8 @@ If what is in the middle is an ocean, a sea or any body of water, write Body of 
 
 ## Development server
 
-Run `npm start`. Go to `http://localhost:4200/`.
+Run `npm start`. 
+
+Go to `http://localhost:4200/`.
 
 
